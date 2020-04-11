@@ -1,11 +1,17 @@
 Feature: Login
-  # Agile story, Same as "functionality"
   As user, I want to be able to login with username and password
+  # Agile story, Same as "functionality"
+
 
 # Test Method = Test Case = Scenario
 # Test + DataProvider = Scenario Outline
 
   Scenario: Login as sales manager and verify that title is Dashboard
+    Given user is on the landing page
+    When user logs in as a sales manager
+    Then user should verify that title is Dashboard
+
+  Scenario: Login as store manager and verify that title is Dashboard
     Given user is on the landing page
     When user logs in as a sales manager
     Then user should verify that title is Dashboard
