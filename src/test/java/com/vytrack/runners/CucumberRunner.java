@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         strict = false,
         tags = "@activities",
         plugin = {
-                "html:target/default-report",
+                "html:target/cucumber-html-report",
                 "json:target/cucumber.json"
         }
 
