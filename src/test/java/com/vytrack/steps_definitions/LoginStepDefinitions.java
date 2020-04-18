@@ -11,7 +11,7 @@ import org.junit.Assert;
 public class LoginStepDefinitions {
 
     LoginPage loginPage = new LoginPage();
-    @Given("user is on the landing page")
+    @Given("user is on the login page")
     public void user_is_on_the_landing_page() {
         // Write code here that turns the phrase above into concrete actions
         System.out.println("Open login page");
@@ -27,6 +27,11 @@ public class LoginStepDefinitions {
     @When("user logs in as a store manager")
     public void user_logs_in_as_a_store_manager(){
         loginPage.login("storemanager85", "UserUser123");
+    }
+    @When("user logs in as a driver")
+    public void user_logs_in_as_a_driver() {
+        System.out.println("Login as a driver");
+        loginPage.login("user15", "UserUser123");
     }
 
     @Then("user should verify that title is Dashboard")
