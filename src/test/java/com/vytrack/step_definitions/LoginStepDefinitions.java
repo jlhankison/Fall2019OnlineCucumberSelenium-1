@@ -52,4 +52,10 @@ public class LoginStepDefinitions {
         loginPage.login(string, string2);
     }
 
+    @When("user navigates to {string} and {string}")
+    public void user_navigates_to_and(String tab, String module) {
+        System.out.printf("User clicks on the %s tab and navigates to %s module\n", tab, module);
+        loginPage.navigateTo(tab, module);
+    }
+
 }

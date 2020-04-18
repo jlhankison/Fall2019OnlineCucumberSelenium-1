@@ -10,8 +10,11 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         dryRun = false,
         strict = false,
-        tags = "@login_with_params",
-        plugin = "html:target/cucumber-html-report"
+        tags = "@activities",
+        plugin = {
+                "html:target/cucumber-html-report",
+                "json:target/cucumber.json"
+        }
 
 )
 public class CucumberRunner {
