@@ -52,4 +52,13 @@ public class LoginStepDefinitions {
         loginPage.login(string, string2);
     }
 
+    @When("user navigates to {string} and {string}")
+    public void user_navigates_to_and(String tab, String module) {
+        // the %s will be replaced with tab and module respectively according to the order they are read.
+        // this would normally look like sout("User clicks on the " + tab + " tab and navigates to " + module)
+        System.out.printf("User clicks on the %s tab and navigates to %s module\n", tab, module);
+        loginPage.navigateTo(tab, module);
+    }
+
+
 }
