@@ -4,6 +4,8 @@ import com.vytrack.pages.activities.CalendarEventsPage;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
+import java.util.Map;
+
 public class CreateCalendarEventStepDefinitions {
     CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
 
@@ -39,5 +41,20 @@ public class CreateCalendarEventStepDefinitions {
     @Then("user verifies that title of new calendar event is {string}")
     public void user_verifies_that_title_of_new_calendar_event_is(String string) {
         Assert.assertEquals(string, calendarEventsPage.getGeneralInfoTitleText());
+    }
+//    And user enters new calendar event information:
+//            | description | On this meeting we discuss what went well, what went wrong and what can be improved |
+//            | title       | Sprint Retrospective                                                                |
+
+    @Then("user enters new calendar event information:")
+    public void user_enters_new_calendar_event_information(Map<String, String> dataTable) {
+        calendarEventsPage.enterCalendarEventDescription(dataTable.get("description"));
+        calendarEventsPage.enterCalendarEventTitle(dataTable.get("title"));
+    }
+
+    @Then("user verifies new calendar event was created successfully")
+    public void user_verifies_new_calendar_event_was_created_successfully(Map<String, String> dataTable) {
+        Assert.assertEquals(dataTable.get("description"), calendarEventsPage.getGeneralInfoDescriptionText());
+        Assert.assertEquals(dataTable.get("title"), calendarEventsPage.getGeneralInfoTitleText());
     }
 }
