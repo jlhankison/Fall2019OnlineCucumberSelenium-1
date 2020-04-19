@@ -33,7 +33,7 @@
                     <parallel>classes</parallel>
                     <threadCount>2</threadCount>
                     <perCoreThreadCount>false</perCoreThreadCount>
-                    <forkMode>perthread</forkMode>
+                    <forkCount>2C</forkCount>
                     <includes>
                         <include>**/*Runner.java</include>
                     </includes>
@@ -43,7 +43,7 @@
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
-                <version>5.0.0</version>
+                <version>4.8.0</version>
                 <executions>
                     <execution>
                         <id>execution</id>
@@ -56,7 +56,7 @@
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
-                                <param>**/cucumber.json</param>
+                                <param>**/cucumber*.json</param>
                             </jsonFiles>
                         </configuration>
                     </execution>
