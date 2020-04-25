@@ -55,4 +55,26 @@ public class LoginPage extends AbstractPageBase{
         BrowserUtilities.waitForPageToLoad(10);
         BrowserUtilities.wait(3);
     }
+
+    public void login(String role){
+        String pass = ConfigurationReader.getProperty("password");
+        String userName = "";
+        switch (role){
+            case("driver"):
+                userName = ConfigurationReader.getProperty("driver");
+                break;
+            case("sales manager"):
+                userName = ConfigurationReader.getProperty("sales_manager");
+                break;
+            case("store manager"):
+                userName = ConfigurationReader.getProperty("store_manager");
+                break;
+            default:
+                throw new RuntimeException("Invalid role!");
+        }
+        System.out.println("Login as: "+role);
+        login(userName, pass);
+
+
+    }
 }

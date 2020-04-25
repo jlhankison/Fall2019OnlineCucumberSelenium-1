@@ -16,6 +16,7 @@ public class CreateCarStepDefinitions {
     public void user_clicks_on_create_a_car_button() {
         System.out.println("User click on create a car button");
         vehiclesPage.clickToCreateCar();
+        vehiclesPage.waitForLoaderMask();
     }
 
 //          Then user creates a car with following info:
@@ -26,12 +27,14 @@ public class CreateCarStepDefinitions {
         System.out.println(dataTable);
 
         for (Map<String, String> row: dataTable ) {
+            BrowserUtilities.wait(3);
             vehiclesPage.setLicencePlateInput(row.get("License Plate"));
             vehiclesPage.setDriverInput(row.get("Driver"));
             vehiclesPage.setLocationInput(row.get("Location"));
             vehiclesPage.setModelYear(row.get("Model Year"));
             vehiclesPage.setColor(row.get("Color"));
             vehiclesPage.clickOnSaveAndClose();
+            vehiclesPage.waitForLoaderMask();
         }
 
     }

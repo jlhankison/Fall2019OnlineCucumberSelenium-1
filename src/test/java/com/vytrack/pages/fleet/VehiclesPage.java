@@ -37,6 +37,7 @@ public class VehiclesPage extends AbstractPageBase {
 
     public void setLicencePlateInput(String licencePlate) {
         BrowserUtilities.waitForPageToLoad(20);
+        waitForLoaderMask();
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[LicensePlate]']")));
         licencePlateInput.sendKeys(licencePlate);
     }
@@ -62,8 +63,8 @@ public class VehiclesPage extends AbstractPageBase {
     }
 
     public void clickToCreateCar() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(createCar)).click();
+        waitForLoaderMask();
     }
 
     public void clickOnSaveAndClose() {
