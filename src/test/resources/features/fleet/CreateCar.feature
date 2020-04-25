@@ -27,7 +27,7 @@ Feature: Create a car
       | License Plate   | Driver   | Location   | Model Year   | Color   |
       | <license_plate> | <driver> | <location> | <model_year> | <color> |
 
-    Examples:
+    Examples: cars test data
       | license_plate | driver      | location        | model_year | color  |
       | 000           | pilot       | Washington D.C. | 2010       | purple |
       | 123           | test_driver | New York        | 2022       | black  |

@@ -31,14 +31,10 @@ public class VehiclesPage extends AbstractPageBase {
     @FindBy(xpath = "(//button[@type='submit'])[1]")
     private WebElement submit;
 
-    @FindBy(css = "[class='btn-group pull-right'] > button")
-    private WebElement saveAndClose;
-
-
     public void setLicencePlateInput(String licencePlate) {
         BrowserUtilities.waitForPageToLoad(20);
-        waitForLoaderMask();
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='custom_entity_type[LicensePlate]']")));
+        wait.until(ExpectedConditions.visibilityOf(licencePlateInput));
         licencePlateInput.sendKeys(licencePlate);
     }
 
@@ -48,6 +44,7 @@ public class VehiclesPage extends AbstractPageBase {
 
     public void setLocationInput(String location) {
         locationInput.sendKeys(location);
+        wait.until(ExpectedConditions.attributeToBe(locationInput, "value", location));
     }
 
     public void setModelYear(String year) {
@@ -65,11 +62,6 @@ public class VehiclesPage extends AbstractPageBase {
     public void clickToCreateCar() {
         wait.until(ExpectedConditions.elementToBeClickable(createCar)).click();
         waitForLoaderMask();
-    }
-
-    public void clickOnSaveAndClose() {
-        BrowserUtilities.wait(3);
-        wait.until(ExpectedConditions.elementToBeClickable(saveAndClose)).click();
     }
 
     public String getCarGeneralInfo(String parameter) {

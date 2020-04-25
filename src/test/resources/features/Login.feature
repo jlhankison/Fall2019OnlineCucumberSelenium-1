@@ -29,7 +29,7 @@ Feature: Login
     When user enters "salesmanager115" username and "UserUser123" password
     Then user should verify that title is a Dashboard
 
-  @Scenario_outline
+  @scenario_outline
   Scenario Outline: User names test for user <name>
     When user enters "<username>" username and "<password>" password
     Then user name should be "<name>"
