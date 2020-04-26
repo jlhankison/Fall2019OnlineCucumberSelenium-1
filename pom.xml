@@ -72,7 +72,7 @@
                     <useUnlimitedThreads>true</useUnlimitedThreads>
                     <includes>
                         <!-- for  run class or classes-->
-                        <include>**/*CucumberRunner.java</include>
+                        <include>**/CucumberRunner*.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>

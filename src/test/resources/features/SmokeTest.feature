@@ -9,9 +9,8 @@ Feature: Smoke test
 
     Examples:
       | user_type     | tab        | module          | title                                                              |
-      | store manager | Fleet      | Vehicles        | All - Car - Entities - System - Car - Entities - System            |
-      | store manager | Fleet      | Vehicles Model  | All - Vehicles Model - Entities - System - Car - Entities - System |
-      | store manager | Customers  | Accounts        | All - Accounts - Customers                                         |
-      | store manager | Customers  | Contacts        | All - Contacts - Customers                                         |
-      | store manager | Activities | Calendar Events | All - Calendar Events - Activities                                 |
-      | store manager | System     | Jobs            | All - Jobs - System                                                |
+      | sales manager | Fleet      | Vehicles        | All - Car - Entities - System - Car - Entities - System            |
+      | sales manager | Fleet      | Vehicles Model  | All - Vehicles Model - Entities - System - Car - Entities - System |
+      | sales manager | Customers  | Accounts        | All - Accounts - Customers                                         |
+      | sales manager | Customers  | Contacts        | All - Contacts - Customers                                         |
+      | sales manager | Activities | Calendar Events | All - Calendar Events - Activities                                 |
