@@ -42,4 +42,3 @@ Feature: Login
       | storemanager66  | UserUser123 | Carlos Ernser    |
       | salesmanager125 | UserUser123 | Cleveland Heller |
       | salesmanager140 | UserUser123 | Jameson Paucek   |
-

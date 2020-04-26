@@ -1,13 +1,11 @@
 package com.vytrack.pages.activities;
 
-
 import com.vytrack.pages.AbstractPageBase;
 import com.vytrack.utilities.BrowserUtilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import java.util.List;
 
 public class CalendarEventsPage extends AbstractPageBase {
@@ -87,7 +85,7 @@ public class CalendarEventsPage extends AbstractPageBase {
         return generalInfoDescription.getText();
     }
 
-//#############################################################
+    //#############################################################
     public List<String> getColumnNames() {
         BrowserUtilities.waitForPageToLoad(20);
         return BrowserUtilities.getTextFromWebElements(columnNames);

@@ -10,25 +10,25 @@ import org.openqa.selenium.TakesScreenshot;
 public class Hooks {
 
     @Before(order = 2)
-    public void setup(){
+    public void setup() {
         System.out.println("Test setup");
         Driver.getDriver().manage().window().maximize();
     }
 
     @Before(value = "@driver", order = 1)
-    public void specialSetup(){
+    public void specialSetup() {
         System.out.println("Setup for driver only");
     }
 
     @After("@driver")
-    public void specialTearDown(){
+    public void specialTearDown() {
         System.out.println("Tear down for driver only");
     }
 
     @After
-    public void tearDown(Scenario scenario){
+    public void tearDown(Scenario scenario) {
         //how to check if scenario failed
-        if (scenario.isFailed()){
+        if (scenario.isFailed()) {
             TakesScreenshot takesScreenshot = (TakesScreenshot) Driver.getDriver();
             byte[] image = takesScreenshot.getScreenshotAs(OutputType.BYTES);
             //attach screenshot to the report

@@ -63,24 +63,17 @@ public class LoginPage extends AbstractPageBase{
      * @param role - driver, sales manager or store manager
      */
     public void login(String role){
-        String pass = ConfigurationReader.getProperty("password");
         String userName = "";
-        switch (role){
-            case("driver"):
-                userName = ConfigurationReader.getProperty("driver");
-                break;
-            case("sales manager"):
-                userName = ConfigurationReader.getProperty("sales_manager");
-                break;
-            case("store manager"):
-                userName = ConfigurationReader.getProperty("store_manager");
-                break;
-            default:
-                throw new RuntimeException("Invalid role!");
+        if (role.equalsIgnoreCase("driver")){
+            userName = "user15";
+        }else if (role.equalsIgnoreCase("sales manager")){
+            userName = "salesmanager110";
+        }else if (role.equalsIgnoreCase("store manager")){
+            userName = "storemanager85";
+        }else {
+            throw new RuntimeException("Invalid role!");
         }
-        System.out.println("Login as: "+role);
-        login(userName, pass);
-
-
+        System.out.println("Login as "+role);
+        login(userName, "UserUser123");
     }
 }
