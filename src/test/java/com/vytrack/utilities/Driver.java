@@ -69,6 +69,10 @@ public class Driver {
         //create it
         if (driverPool.get() == null) {
             //specify browser type in configuration.properties file
+
+            if(System.getProperty("browser")!= null){
+                browser = System.getProperty("browser");
+            }
             switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().version("79").setup();
